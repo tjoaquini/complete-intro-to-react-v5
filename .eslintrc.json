@@ -4,7 +4,14 @@
 		"node": true,
 		"es6": true
 	},
-	"extends": ["airbnb", "prettier", "prettier/react"],
+	"extends": [
+		"airbnb",
+		"plugin:import/errors",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
+		"prettier",
+		"prettier/react"
+	],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
@@ -16,8 +23,18 @@
 		"ecmaVersion": 2018,
 		"sourceType": "module"
 	},
-	"plugins": ["react", "prettier"],
+	"plugins": ["react", "import", "jsx-a11y", "react-hooks", "prettier"],
 	"rules": {
+		"react/prop-types": 0,
+		"no-console": 1,
+		"react-hooks/rules-of-hooks": 2,
+		"react-hooks/exhaustive-deps": 1,
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"prettier/prettier": "error"
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
 	}
 }
